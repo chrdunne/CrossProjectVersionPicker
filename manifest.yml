@@ -1,0 +1,19 @@
+modules:
+  jira:customField:
+    - key: cross-project-version-picker
+      name: Cross Project Version Picker
+      description: Cross Project Version Picker
+      edit:
+        function: edit
+      type: string
+      function: view
+  function:
+    - key: view
+      handler: index.renderFieldView
+    - key: edit
+      handler: index.renderFieldEdit
+permissions:
+  scopes:
+    - read:jira-work
+app:
+  id: ari:cloud:ecosystem::app/48fd47c4-dd5e-4979-b27d-b5c578a2367e
