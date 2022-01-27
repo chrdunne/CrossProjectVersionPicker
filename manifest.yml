@@ -1,19 +1,28 @@
 modules:
-  jira:customField:
+  jira:customFieldType:
     - key: cross-project-version-picker
       name: Cross Project Version Picker
-      description: Cross Project Version Picker
+      description: Cross Project Version Picker field type.
+      type: string
+      function: main
       edit:
         function: edit
-      type: string
-      function: view
+      contextConfig:
+        function: configureContext
   function:
-    - key: view
-      handler: index.renderFieldView
+    - key: main
+      handler: index.runView
     - key: edit
-      handler: index.renderFieldEdit
+      handler: index.runEdit
+    - key: configureContext
+      handler: index.runContextConfig
 permissions:
   scopes:
     - read:jira-work
+    - manage:jira-project
+    - storage:app
+    - write:jira-work
+    - manage:jira-configuration
+    - read:jira-user
 app:
   id: ari:cloud:ecosystem::app/48fd47c4-dd5e-4979-b27d-b5c578a2367e
