@@ -7,15 +7,11 @@ modules:
       function: main
       edit:
         function: edit
-      contextConfig:
-        function: configureContext
   function:
     - key: main
       handler: index.runView
     - key: edit
       handler: index.runEdit
-    - key: configureContext
-      handler: index.runContextConfig
 permissions:
   scopes:
     - read:jira-work
